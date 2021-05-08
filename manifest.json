@@ -1,0 +1,21 @@
+{
+  "name": "RagaRecognition",
+  "description": "Predict the raga from an audio",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "service_worker": "background-wrapper.js"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "RagaRecognition"
+  },
+  "web_accessible_resources": ["content-*.html"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-get-device-access.js"]
+    }
+  ],
+  "permissions": ["tabs", "activeTab"]
+}
